@@ -26,7 +26,7 @@ import sys
 import py_compile
 import optparse
 import os
-import commands
+import subprocess
 import time
 import random
 import string
@@ -278,7 +278,7 @@ _byte_ = (_output_) + "c" # bytecode format
 
 # if platform is linux and NXcrypt isn't launched  as root
 if (sys.platform.startswith("linux")) :
-	if (commands.getoutput("whoami")) != "root" :
+	if (subprocess.getoutput("whoami")) != "root" :
 		print ("run it as root")
 		sys.exit() #exit
 	else:
